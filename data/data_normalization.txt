@@ -1,0 +1,26 @@
+The data is structured as follows:
+
+Columns   1-3: Velocity of reference particle (RP) 
+Columns   4-6: Acceleration of RP
+Columns   7-9: Gravity input for simulation (global value)        
+Column     10: Average Velocity over current timestep = <v_{timestep}> 
+Column     11: Force-Scale = 1/(3 * pi * mu * d_p * <v_{timestep}> ) 
+Column     12: Particle Density Ratio 
+Column     13: Volume Fraction 
+Column     14: Entire Simulation's Mean Drag
+Column     15: Entire Simulation's Stdev Drag  
+Column  16-18: Hydrodynamic Ground Truth Force 
+Columns 19-21: Torque on Particles (set to 0 , 0 , 0 )  
+Column     22: Force Loss Function Weight (Mean drag over timestep)  
+Column     23: Torque Loss Function Weight (Set to 1) 
+Columns 24-26: First Nearest Neighbor's x,y, and z location 
+Columns 27-29: First Nearest Neighbors Vx, Vy, and Vz
+Column     30: Nearest Neighbor's local volume fraction
+Repeat last 7 columns for each of the remaining 25 neighbors to give a total of 205 columns
+
+
+Normalization: 
+
+Velocity scale - mu/(rho*d_p) 
+Length scale   - d_p 
+Force scale    - 3*pi*mu*d_p*(magnitude of average velocity per timestep)
